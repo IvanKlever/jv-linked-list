@@ -110,12 +110,12 @@ public class MyLinkedList<T> implements MyLinkedListInterface<T> {
         }
     }
 
-    // ===================== ВСПОМОГАТЕЛЬНЫЕ =====================
-
     private T unlink(Node<T> node) {
         final T value = node.value;
         Node<T> prev = node.prev;
+        node.prev = null;
         Node<T> next = node.next;
+        node.prev = null;
 
         if (prev == null) {
             head = next;
